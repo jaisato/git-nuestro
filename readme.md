@@ -8,7 +8,7 @@
   git reset --hard HEAD~1
   ```
 
-  Se usa *git reset* para deshacer los cambios. Como se deben deshacer los cambios del último commit se usa *HEAD~1* que apunta al último commit realizado en el branch. Y para perder todos los cambios, incluso en el working copy, se usa la opción *--hard*.
+  Se usa *git reset* para deshacer los cambios. Como se deben deshacer los cambios del último commit se usa *HEAD~1*, que apunta al commit padre del último (el penúltimo de la rama): la rama se mueve ahí y el último commit queda fuera de ella (aunque sigue accesible desde *git reflog*). Y para perder todos los cambios, incluso en el working copy, se usa la opción *--hard*.
 
 - ¿Qué comando o comandos utilizaste en el paso 12? ¿Por qué?
 
@@ -65,12 +65,12 @@
 
 - ¿Qué comando o comandos utilizaste en el paso 30?
 
-  *git reflog* para encontrar el commit del merge. Y *git reset --hard 1a88583* para volver a reestablecer el commit del merge.
+  *git reflog* para encontrar el commit del merge. Y *git reset --hard 1a88583* para volver a restablecer el commit del merge.
 
 - ¿Qué comando o comandos usaste en el paso 32?
 
-  *git log* para ver el 1r commit. Y *git reset --hard fe95d427fe340dfd22f63aa3dda18086f1d2946c* para reestablecer el commit inicial.
+  *git log* para ver el primer commit. Y *git reset --hard fe95d427fe340dfd22f63aa3dda18086f1d2946c* para restablecer el commit inicial.
 
 - ¿Qué comando o comandos usaste en el punto 33?
 
-  *git reflog* para encontrar el último commit con el título (merge). Y *git reset --hard 1a88583* para volver a reestablecer el commit del merge con el título.
+  *git reflog* para encontrar el último commit con el título (merge). Y *git reset --hard 1a88583* para volver a restablecer el commit del merge con el título.
