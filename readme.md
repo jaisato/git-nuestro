@@ -43,7 +43,9 @@
 
 - El merge del paso 26, ¿Podría ser fast forward? ¿Por qué?
 
-  Sí, porque partimos de una "lista" donde no hay bifurcación que pueda dar conflictos entre ramas. Por tanto, el puntero en master podría cambiar y apuntar directamente al último commit realizado en title.
+  Sí, porque *title* salió del último commit de *master* (85d281b) y *master* no ha avanzado desde entonces: no hay bifurcación, *master* es antecesor directo de *title* y basta con mover su puntero al último commit realizado en *title*. Lo que permite el "fast-forward" es eso, no la ausencia de conflictos: dos ramas bifurcadas también pueden mezclarse sin ninguno, pero necesitan un commit de merge.
+
+  En el historial aparece igualmente un commit de merge (1a88583, con padres 85d281b y fbc39f8): cuando el fast-forward es posible, git solo lo crea si se le pide, p. ej. con `git merge --no-ff`.
 
 - ¿Qué comando o comandos utilizaste en el paso 27?
 
